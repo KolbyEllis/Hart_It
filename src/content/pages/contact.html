@@ -26,43 +26,56 @@ permalink: 'contact/'
         </picture>
     </section>
 
-    <!-- ============================================ -->
-    <!--                Contact Form                  -->
-    <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                    Form                      -->
+<!-- ============================================ -->
 
-    <section id="cs-contact">
-        <div class="cs-container">
-            <form id="cs-form" name="Contact Form" method="post">
-                <div class="cs-content">
-                    <span class="cs-topper">Contact</span>
-                    <h2 class="cs-title">Get in Touch</h2>
-                    <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
-                    </p>
-                </div>
-                <label>
-                    Name
-                    <input required type="text" id="name" name="name" placeholder="Name">
-                </label>
-                <label>
-                    Email
-                    <input required type="text" id="email" name="email" placeholder="Email">
-                </label>
-                <label>
-                    Phone
-                    <input required type="text" id="phone" name="phone" placeholder="Phone">
-                </label>
-                <label>
-                    How Did You Find Us
-                    <input type="text" id="find" name="find-us" placeholder="How did you find us?">
-                </label>
-                <label class="cs-label-message">
-                    Message
-                    <textarea required name="Message" id="message" placeholder="Write message..."></textarea>
-                </label>
-                <button class="cs-button-solid" type="submit">Submit Message</button>
-            </form>
-            <div class="cs-right-section">
+<section id="cs-contact-486">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Looking for the best property management company in <span class="cs-color">Goodyear, AZ?</span></h2>
+            <p class="cs-text">
+Interested in our property management services or want to discuss your rental property in Goodyear or the West Valley? Fill out the form and our team will reach out to answer your questions and explain how we can help maximize your investment.
+            </p>
+            <span class="cs-heading">Prefer to speak with us directly?</span>
+            <a href="tel:623-262-8584" class="cs-link">Phone: (623) 248-1929</a>
+            <a href="mailto:kolby.sunseeker@gmail.com" class="cs-link">Email: ken.sunseeker@gmail.com</a>
+        </div>
+        <!--Form-->
+        <form id="cs-form-486" name="Goodyear PM Form" method="post" data-netlify="true" data-netlify-recaptcha="true" action="/submission-complete/">
+                        
+            <input type="hidden" name="form-name" value="Goodyear PM Form">
+            
+            <h3 class="cs-h3">Contact Us Today For A Free Rental Analysis!</h3>
+            <label class="cs-label">
+                First Name
+                <input class="cs-input" required type="text" id="first-name-486" name="first_name" placeholder="First Name">
+            </label>
+            <label class="cs-label">
+                Last Name
+                <input class="cs-input" required type="text" id="last-name-486" name="last_name" placeholder="Last Name">
+            </label>
+            <label class="cs-label">
+                Phone
+                <input class="cs-input" required type="text" id="phone-486" name="phone" placeholder="Phone">
+            </label>
+            <label class="cs-label">
+                Email
+                <input class="cs-input" required type="email" id="email-486" name="email" placeholder="Email">
+            </label>
+                         <label class="cs-label">
+                 Address or Approximate Location
+                 <input class="cs-input" type="text" id="location-486" name="location" placeholder="e.g. Full address or nearest major cross streets">
+             </label>
+             <label class="cs-label">
+                Tell Us About Your Property
+                <textarea class="cs-input cs-textarea" required name="Message" id="message-1333" placeholder="Write message..."></textarea>
+            </label>
+             <div data-netlify-recaptcha="true"></div>
+            <button class="cs-button-solid cs-submit" type="submit">Request Information</button>
+        </form>
+    </div>
+</section>            <div class="cs-right-section">
                 <!--Email-->
                 <span class="cs-header">Email</span>
                 <a class="cs-link" href="mailto:{{client.email}}">{{client.email}}</a>
