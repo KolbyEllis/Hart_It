@@ -152,7 +152,7 @@ function showErrorMessage(message) {
     `;
     
     const form = document.querySelector('#cs-form-486');
-    form.parentNode.insertBefore(errorDiv, form.nextSibling);
+    form.parentNode.insertBefore(successDiv, form.nextSibling);
     
     setTimeout(() => {
         errorDiv.remove();
