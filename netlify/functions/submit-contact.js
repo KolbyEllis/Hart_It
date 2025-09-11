@@ -65,45 +65,21 @@ const handler = async (event, context) => {
             };
         }
 
-        // Forward to your Keap clone
-        const keapCloneResponse = await fetch('https://jovial-melomakarona-ad9e4e.netlify.app/api/contact-webhook.js', {
-            method: 'POST',
+        // For a static site, we'll return the contact data
+        // The client-side code will handle adding it to localStorage
+        return {
+            statusCode: 200,
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
-                'User-Agent': 'Test-Site-Form/1.0',
             },
-            body: JSON.stringify(contactData),
-        });
-
-        const keapCloneResult = await keapCloneResponse.json();
-
-        if (keapCloneResponse.ok && keapCloneResult.success) {
-            return {
-                statusCode: 200,
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    success: true, 
-                    message: 'Contact created successfully',
-                    contactId: keapCloneResult.contactId 
-                }),
-            };
-        } else {
-            console.error('Keap clone error:', keapCloneResult);
-            return {
-                statusCode: 500,
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    error: 'Failed to create contact in Keap clone',
-                    details: keapCloneResult.error 
-                }),
-            };
-        }
+            body: JSON.stringify({ 
+                success: true, 
+                message: 'Contact data received successfully',
+                contactData: contactData,
+                contactId: Date.now().toString()
+            }),
+        };
 
     } catch (error) {
         console.error('Function error:', error);

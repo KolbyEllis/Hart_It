@@ -1,8 +1,8 @@
 /**
- * Test Site Contact Form Integration
+ * Simple Integration for Test Site
  * 
- * This script integrates the test site form with your Keap clone.
- * It sends form data to your Keap clone instead of n8n.
+ * This script integrates the test site form with your Keap clone
+ * by opening the Keap clone with contact data in URL parameters.
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -13,18 +13,21 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    console.log('Form integration script loaded successfully');
+
     contactForm.addEventListener('submit', async function(e) {
+        console.log('Form submission detected');
+        
         // Don't prevent default - let Netlify handle the form submission
-        // We'll send to Keap clone after Netlify processes it
         
         const formData = new FormData(contactForm);
         const contactData = {
-            firstName: formData.get('first_name') || formData.get('firstName') || formData.get('first-name') || '',
-            lastName: formData.get('last_name') || formData.get('lastName') || formData.get('last-name') || '',
+            firstName: formData.get('first_name') || '',
+            lastName: formData.get('last_name') || '',
             email: formData.get('email') || '',
             phone: formData.get('phone') || '',
             location: formData.get('location') || '',
-            message: formData.get('Message') || formData.get('message') || '',
+            message: formData.get('Message') || '',
             source: 'test-site',
             tags: [
                 'Test Contact',
@@ -34,49 +37,70 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         };
 
+        console.log('Contact data extracted:', contactData);
+
         // Show loading state
-        const submitButton = contactForm.querySelector('button[type="submit"], input[type="submit"]');
-        const originalButtonText = submitButton.textContent || submitButton.value;
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
         submitButton.disabled = true;
         submitButton.textContent = 'Submitting...';
-        if (submitButton.value) submitButton.value = 'Submitting...';
 
         try {
-            // Send to Netlify function (which forwards to Keap clone)
-            const response = await fetch('/.netlify/functions/submit-contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(contactData)
-            });
-
-            const result = await response.json();
-
-            if (response.ok && result.success) {
-                showSuccessMessage('Thank you! Your information has been submitted successfully. We\'ll contact you soon.');
-                // No form.reset() here to allow Netlify's default action
-            } else {
-                console.error('Keap clone submission failed:', result.error);
-                // Don't show error to user - let Netlify handle the main submission
-            }
+            // Create contact in Keap clone by opening it in a new window
+            await createContactInKeapClone(contactData);
+            showSuccessMessage('Thank you! Your information has been submitted successfully.');
         } catch (error) {
-            console.error('Keap clone submission error:', error);
-            // Don't show error to user - let Netlify handle the main submission
+            console.error('Error:', error);
+            showErrorMessage('There was an error submitting your information.');
         } finally {
-            // Reset button state
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
-            if (submitButton.value) submitButton.value = originalButtonText;
         }
     });
 });
 
 /**
- * Show success message to user
+ * Create contact in Keap clone by opening it in a new window
+ */
+async function createContactInKeapClone(contactData) {
+    console.log('Creating contact in Keap clone:', contactData);
+    
+    // Create the contact object
+    const newContact = {
+        id: Date.now().toString(),
+        firstName: contactData.firstName,
+        lastName: contactData.lastName,
+        email: contactData.email,
+        phoneType: 'Mobile',
+        phone: contactData.phone,
+        tags: contactData.tags,
+        source: contactData.source,
+        createdAt: new Date().toISOString()
+    };
+
+    console.log('New contact object:', newContact);
+
+    // Encode the contact data as URL parameters
+    const params = new URLSearchParams({
+        action: 'addContact',
+        contactData: JSON.stringify(newContact)
+    });
+
+    // Open Keap clone in new window with the contact data
+    const keapUrl = `https://jovial-melomakarona-ad9e4e.netlify.app/contacts?${params.toString()}`;
+    
+    console.log('Opening Keap clone URL:', keapUrl);
+    
+    // Open in new tab
+    window.open(keapUrl, '_blank');
+    
+    console.log('Keap clone opened successfully');
+}
+
+/**
+ * Show success message
  */
 function showSuccessMessage(message) {
-    // Remove any existing messages
     removeExistingMessages();
     
     const successDiv = document.createElement('div');
@@ -96,21 +120,18 @@ function showSuccessMessage(message) {
         </div>
     `;
     
-    // Insert after the form
     const form = document.querySelector('#cs-form-486');
     form.parentNode.insertBefore(successDiv, form.nextSibling);
     
-    // Auto-remove after 5 seconds
     setTimeout(() => {
         successDiv.remove();
     }, 5000);
 }
 
 /**
- * Show error message to user
+ * Show error message
  */
 function showErrorMessage(message) {
-    // Remove any existing messages
     removeExistingMessages();
     
     const errorDiv = document.createElement('div');
@@ -130,18 +151,16 @@ function showErrorMessage(message) {
         </div>
     `;
     
-    // Insert after the form
     const form = document.querySelector('#cs-form-486');
     form.parentNode.insertBefore(errorDiv, form.nextSibling);
     
-    // Auto-remove after 8 seconds
     setTimeout(() => {
         errorDiv.remove();
     }, 8000);
 }
 
 /**
- * Remove existing success/error messages
+ * Remove existing messages
  */
 function removeExistingMessages() {
     const existingMessages = document.querySelectorAll('.form-success-message, .form-error-message');
