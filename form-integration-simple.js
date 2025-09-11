@@ -1,19 +1,29 @@
 /**
- * Simple Integration for Test Site
+ * Test Site Form Integration with Supabase Database
  * 
- * This script integrates the test site form with your Keap clone
- * by opening the Keap clone with contact data in URL parameters.
+ * This script submits form data directly to Supabase database
  */
 
+// Supabase configuration
+const SUPABASE_URL = 'https://tukqivldrbcxijqjgqkw.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR1a3FpdmxkcmJjeGlqcWpncWt3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc2Mjg4ODcsImV4cCI6MjA3MzIwNDg4N30.0zp-fED7GB7QgajlzmHk3M7iYTPaXob-rH1bY63_Eq4';
+
+// Initialize Supabase client
+const { createClient } = supabase;
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Supabase form integration script loaded successfully');
+    
     // Find your contact form
     const contactForm = document.querySelector('#cs-form-486');
     if (!contactForm) {
-        console.error('Contact form not found');
+        console.error('Contact form not found with ID #cs-form-486');
+        console.log('Available forms:', document.querySelectorAll('form'));
         return;
     }
 
-    console.log('Form integration script loaded successfully');
+    console.log('Contact form found:', contactForm);
 
     contactForm.addEventListener('submit', async function(e) {
         console.log('Form submission detected');
@@ -22,12 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const formData = new FormData(contactForm);
         const contactData = {
-            firstName: formData.get('first_name') || '',
-            lastName: formData.get('last_name') || '',
+            first_name: formData.get('first_name') || '',
+            last_name: formData.get('last_name') || '',
             email: formData.get('email') || '',
             phone: formData.get('phone') || '',
             location: formData.get('location') || '',
             message: formData.get('Message') || '',
+            phone_type: 'Mobile',
             source: 'test-site',
             tags: [
                 'Test Contact',
@@ -46,8 +57,8 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = 'Submitting...';
 
         try {
-            // Create contact in Keap clone by opening it in a new window
-            await createContactInKeapClone(contactData);
+            // Submit to Supabase database
+            await submitContactToDatabase(contactData);
             showSuccessMessage('Thank you! Your information has been submitted successfully.');
         } catch (error) {
             console.error('Error:', error);
@@ -60,41 +71,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Create contact in Keap clone by opening it in a new window
+ * Submit contact data to Supabase database
  */
-async function createContactInKeapClone(contactData) {
-    console.log('Creating contact in Keap clone:', contactData);
+async function submitContactToDatabase(contactData) {
+    console.log('Submitting contact to database:', contactData);
     
-    // Create the contact object
-    const newContact = {
-        id: Date.now().toString(),
-        firstName: contactData.firstName,
-        lastName: contactData.lastName,
-        email: contactData.email,
-        phoneType: 'Mobile',
-        phone: contactData.phone,
-        tags: contactData.tags,
-        source: contactData.source,
-        createdAt: new Date().toISOString()
-    };
+    try {
+        const { data, error } = await supabaseClient
+            .from('contacts')
+            .insert([contactData])
+            .select();
 
-    console.log('New contact object:', newContact);
+        if (error) {
+            console.error('Database error:', error);
+            throw error;
+        }
 
-    // Encode the contact data as URL parameters
-    const params = new URLSearchParams({
-        action: 'addContact',
-        contactData: JSON.stringify(newContact)
-    });
-
-    // Open Keap clone in new window with the contact data
-    const keapUrl = `https://jovial-melomakarona-ad9e4e.netlify.app/contacts?${params.toString()}`;
-    
-    console.log('Opening Keap clone URL:', keapUrl);
-    
-    // Open in new tab
-    window.open(keapUrl, '_blank');
-    
-    console.log('Keap clone opened successfully');
+        console.log('Contact submitted successfully:', data);
+        
+        // Open Keap clone to show the new contact
+        setTimeout(() => {
+            window.open('https://jovial-melomakarona-ad9e4e.netlify.app/contacts', '_blank');
+        }, 1000);
+        
+    } catch (error) {
+        console.error('Failed to submit contact:', error);
+        throw error;
+    }
 }
 
 /**
@@ -152,7 +155,7 @@ function showErrorMessage(message) {
     `;
     
     const form = document.querySelector('#cs-form-486');
-    form.parentNode.insertBefore(successDiv, form.nextSibling);
+    form.parentNode.insertBefore(errorDiv, form.nextSibling);
     
     setTimeout(() => {
         errorDiv.remove();
