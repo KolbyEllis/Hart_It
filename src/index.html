@@ -1,296 +1,124 @@
 ---
-title: 'Pixel Perfect Websites'
-description: 'Meta description for the page'
-preloadImg: '/assets/images/landing.jpg'
+title: 'Custom Cards & Event Signage'
+description: 'Hart It is a handmade calligraphy and design studio in Arizona. Custom greeting cards and event signage, lettered since 2019.'
 permalink: '/'
-eleventyNavigation:
-  key: Home
-  order: 100
 ---
 
 {% extends "layouts/base.html" %}
 
-{% block head %}
-    <link rel="stylesheet" href="/assets/css/local.css" />
-    <link rel="stylesheet" href="/assets/css/critical.css" />
-
-    <!-- Script for Netlify Identity -->
-    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script defer>
-        if (window.netlifyIdentity) {
-            window
-                .netlifyIdentity
-                .on('init', (user) => {
-                    if (!user) {
-                        window
-                            .netlifyIdentity
-                            .on('login', () => {
-                                document.location.href = '/admin/';
-                            });
-                    }
-                });
-        }
-    </script>
-{% endblock %}
-
 {% block body %}
-
-<!--
-    NOTES:
-
-    We are using negative margin on the cs-card-group to create the overlapping effect. This pulls the section below it toward it which makes it overlap whatever section is below it. So we need to add extra padding top the the section below it to account for this. Here's the values you need to add to the section below this one to make them work together:
-
-    On mobile:
-    LESS: padding-top: (260/16rem)
-    SCSS: padding-top: calc(260 / 16 * 1rem)
-    CSS: 16.25rem
-
-    On tablet (768px):
-    /* 132px - 260px */
-    padding-top: clamp(8.25rem, 25vw, 16.25rem);
--->
-
-   <!-- Usage Notes:
-We made this stitch to overlap the section below it, so if there's a patterned texture or image background on the next section below, it will overlap on top of it. Other Stitches like this would have a white gap between the cards and the next section. In order to make Stitches like this work, we need to add a padding top on the section below it to counteract the overlap. Here's the padding top you need to add to the section below this one and all the breakpoints to add them so this design will work with whatever comes after it:
-
-ON MOBILE (360px): add padding-top: (520/16rem); using LESS, or padding-top: calc(520 / 16 * 1rem); if you're using SCSS, or padding-top: 32.5rem; if you're just using vanilla CSS.
-
-ON TABLET (768px): Reset to padding-top: (280/16rem); using LESS, padding-top: calc(280 / 16 * 1rem) for SCSS or padding-top: 17.5rem; for CSS.
-
-Doing this will complete the overlapping "breaking the container" look.
--->
-
-<!-- ============================================ -->
-<!--                    Hero                      -->
-<!-- ============================================ -->
-
-<section id="hero-1298">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">SunSeeker Rentals Property Management</span>
-            <h1 class="cs-title">Need help leasing your home?</h1>
-            <p class="cs-text">
-                Look no further than SunSeeker Rentals, your trusted partner in property management. Whether you're a seasoned landlord or new to the rental market, our dedicated team is here to streamline the leasing process and maximize your property's potential.
-            </p>
-            <a href="" class="cs-button-solid">Schedule A Meeting</a>
+<section class="wrap hero">
+    <div>
+        <span class="eyebrow">Arizona · Est. 2019</span>
+        <h1>Custom cards &amp; event signage, <em>lettered by hand.</em></h1>
+        <p class="lede">Hart It draws the card you keep and the sign guests read when they walk in. Greeting cards, thank-yous, welcome signs, menus, and the date of the day — made for that occasion, not pulled from a rack.</p>
+        <div class="hero-actions">
+            <a class="btn btn-solid" href="/cards/">Shop custom cards</a>
+            <a class="btn btn-line" href="/signage/">Shop event signage</a>
         </div>
     </div>
-    <div class="cs-container">
-        <ul class="cs-card-group">
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/brain.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
-                    <h3 class="cs-h3">Have Questions about Leasing Your Home?</h3>
-                    <p class="cs-item-text">
-                        We will go ahead that extra mile to ensure our clients welfare, our working hours convenient to our Client's from contact.
-                    </p>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/users.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
-                    <h3 class="cs-h3">Existing Tenants View Your Portal Here</h3>
-                    <p class="cs-item-text">
-                        We will go ahead that extra mile to ensure our clients welfare, our working hours convenient to our Client's from contact.
-                    </p>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a href="" class="cs-link">
-                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/Layer.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
-                    <h3 class="cs-h3">View our current rentals on the market</h3>
-                    <p class="cs-item-text">
-                        We will go ahead that extra mile to ensure our clients welfare, our working hours convenient to our Client's from contact.
-                    </p>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!--Background Image, background image added in CSS at 1600px wide for parallax effect-->
-    <picture class="cs-background">
-        <!--Mobile Image-->
-        <source media="(max-width: 1023px)" srcset="/assets/images/hero-m.png">
-        <!--Tablet and above Image-->
-        <source media="(min-width: 1024px)" srcset="/assets/images/hero.png">
-        <img loading="lazy" decoding="async" src="/assets/images/hero.png" alt="buildings" width="1280" height="568">
-    </picture>
-</section>
-                                                                                               
-
-<!-- ============================================ -->
-<!--                   Stats                      -->
-<!-- ============================================ -->
-
-<section id="stats-539">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">Areas of Service</span>
-            <h2 class="cs-title">Property management for the entire
-                <span class="cs-color"> Phoenix metro area!</span></h2>
-            <p class="cs-text">
-                We are easily your best choice when looking for a property manager for a Phoenix area rental property. We have a very straight forward and easy to understand fee structure, with no "a la carte" pricing. Other than the monthly management fee, there is only one other fee (leasing fee). <strong>Best of all our service is premium when compared to other management companies.</strong>
-            </p>
-        </div>
-        <ul class="cs-card-group">
-            <li class="cs-item">
-                <span class="cs-number">150+</span>
-                <span class="cs-desc">Positive Reviews</span>
-            </li>
-            <li class="cs-item">
-                <span class="cs-number">x years</span>
-                <span class="cs-desc">In Property Management</span>
-            </li>
-            <li class="cs-item">
-                <span class="cs-number">400+</span>
-                <span class="cs-desc">Properties Managed</span>
-            </li>
-            <li class="cs-item">
-                <span class="cs-number">0</span>
-                <span class="cs-desc">Cancellation Fees</span>
-            </li>
-        </ul>
-        <a href="" class="cs-big-link">
-            <!--Background Image-->
-            <picture class="cs-background">
-                <source media="(min-width: 1024px)" srcset="/assets/images/thumbnail.png">
-                <source media="(min-width: 601px)" srcset="/assets/images/thumbnail.png">
-                <source media="(max-width: 600px)" srcset="/assets/images/thumbnail-m.png">
-                <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/thumbnail.png" alt="meeting" width="1280" height="580">
-            </picture>
-            <!--Play Icon-->
-            <img class="cs-link-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Stats/play-yellow.svg" alt="play icon" width="110" height="110">
-        </a>
+    <div class="hero-stack" aria-hidden="true">
+        <div class="frame">{% include "art/birthday.html" %}</div>
+        <div class="frame">{% include "art/welcome.html" %}</div>
+        <div class="frame">{% include "art/thanks.html" %}</div>
     </div>
 </section>
-                                
-<!-- ============================================ -->
-<!--                   Contact                    -->
-<!-- ============================================ -->
 
-<section id="contact-983">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">Contact Us</span>
-            <h2 class="cs-title">How Much Will My Home Rent For?</h2>
+<section class="wrap emphasis" aria-label="Featured offerings">
+    <a class="band band-cards" href="/cards/">
+        <div>
+            <span class="eyebrow">Start here</span>
+            <h2>Custom cards <em>for one person.</em></h2>
+            <p>Birthday florals, striped thank-yous, family notes, holiday candles, and illustrated one-offs. The work the studio is known for, sleeved and ready to hand over.</p>
+            <div class="band-actions"><span class="btn btn-solid">See the cards</span></div>
         </div>
-        <!--Form-->
-        <form class="cs-form" id="cs-form-983" name="Contact Form" method="post">
-            <label class="cs-label">
-                First Name
-                <input class="cs-input" required type="text" id="name-587-983" name="First Name" placeholder="First Name">
-            </label>
-            <label class="cs-label">
-                Last Name
-                <input class="cs-input" required type="text" id="name-587-983" name="Last Name" placeholder="Last Name">
-            </label>
-            <label class="cs-label">
-                Email
-                <input class="cs-input" required type="text" id="email-587-983" name="email" placeholder="Email">
-            </label>
-            <label class="cs-label">
-                Phone Number
-                <input class="cs-input" required type="text" id="phone-587-983" name="phone" placeholder="Enter Your Phone Number">
-            </label>
-            <label class="cs-label cs-message">
-                Tell Us About Your Property
-                <textarea class="cs-input cs-textarea" required name="Address" id="message-587-983" placeholder="Tell Us About Your Property"></textarea>
-            </label>
-            <div class="cs-wrapper">
-                <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
-            </div>
-        </form>
-    </div>
-    <!--Background Image-->
-    <picture class="cs-background">
-        <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/salon-bg-m.jpg">
-        <!--Tablet and above Image-->
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/salon-bg.jpg">
-        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/salon-bg.jpg" alt="hair salon" width="2500" height="770">
-    </picture>
+        <div class="frame">{% include "art/family.html" %}</div>
+    </a>
+    <a class="band band-signs" href="/signage/">
+        <div>
+            <span class="eyebrow">For the day itself</span>
+            <h2>Event signage <em>in the same hand.</em></h2>
+            <p>Welcome signs, a lettered date, menus, place cards, and full suites. The paper people photograph, then take home.</p>
+            <div class="band-actions"><span class="btn btn-solid">See the signage</span></div>
+        </div>
+        <div class="frame">{% include "art/date.html" %}</div>
+    </a>
 </section>
 
-<!-- ============================================ -->
-<!--                   Reviews                    -->
-<!-- ============================================ -->
-
-<section id="reviews-727">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">Testimonials</span>
-            <h2 class="cs-title">Read Some Of Our Many Reviews!</h2>
-            <p class="cs-text">
-                You can reach us 7 days a week via email and you'll be amazed how quickly we respond to your communications. We're not like the other property management companies in the area and our current clients will confirm that! 
-            </p>
+<section class="wrap section">
+    <div class="section-head">
+        <div>
+            <span class="eyebrow">Custom cards</span>
+            <h2>The pieces people mail, keep, and give.</h2>
         </div>
-        <ul class="cs-card-group">
-            <li class="cs-item">
-                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/yellow-quote.svg" alt="quote icon" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
-                <h3 class="cs-h3">Cindi and Ken are amazing!!</h3>
-                <p class="cs-item-text">
-                    We own a home in Avondale and being a military family, we are always moving. Currently living in Washington and renters moving out of our house, left us looking for new property management and renters. They helped us every step of the way and were so willing to work with out situation. I never imagined things would be so easy and streamlined. They worked hard to find the right fit for our home and we felt comfortable leaving our own in their hands. My husband and I appreciate them so much and so happy that we were able to find them! We had a previous PM horror story, but Cindi and Ken were nothing like that and restored our faith in people. A true blessing! COMMUNICATION was always important and boy are they great at it!!   
-                </p>
-                <span class="cs-name">Roxanna Thomas</span>
-            </li>
-            <li class="cs-item">
-                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/yellow-quote.svg" alt="quote icon" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
-                <h3 class="cs-h3">Quick Communication!</h3>
-                <p class="cs-item-text">
-                    Ken and Cindi have been my rental managers for 5 years and they are awesome...no other way to express how professional, hardworking and responsive they are. I have had a couple of very difficult situations with tenants and because I live three states away they have been a godsend. They immediately responded to the situations, got to work on them, kept in touch with me all along the way and saved me huge amounts of money that I otherwise would have lost. Besides being so professional they are WONDERFUL people. If you are looking for rental managers they are the people you want and you won't be disappointed.  
-                </p>
-                <span class="cs-name">Sherry Maxwell</span>
-            </li>
-            <li class="cs-item">
-                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/yellow-quote.svg" alt="quote icon" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
-                <h3 class="cs-h3">Outstanding Management</h3>
-                <p class="cs-item-text">
-                    If you're looking for an outstanding, professional property management team, look no further than Cindi & Kenneth. They've managed our property for nearly 3 years and we've had nothing but a positive experience. They're responsive and answer any of our questions in a timely manner. In addition, they quickly inform us if there are any issues which require our approval to resolve. Lastly, they provide an outstanding end-of-year financial statement which greatly helps come tax time.
-                </p>
-                <span class="cs-name">John Migyanko</span>
-            </li>
-            <li class="cs-item">
-                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/yellow-quote.svg" alt="quote icon" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
-                <h3 class="cs-h3">Very Reliable</h3>
-                <p class="cs-item-text">
-                    Ken and Cindi are wonderful to work with. We were having many issues with another management company in regards to our rental home and them not keeping up with the care of our property and ignoring our phone calls and emails. Ken and Cindi stepped right in and solved all of our issues immediately. They have a great working relationship with our tenants and respond quickly with a call or an email when there is an issue. They are very nice people and really care about your property unlike other companies that are just in it for a check. In addition they also take care of our personal vacation home in Arizona. We never have to worry about our properties and are very confident with them. We would highly recommend them to anybody looking for a property manager and someone to trust with their home.  
-                </p>
-                <span class="cs-name">Carrie Kelly</span>
-            </li>
-        </ul>
+        <a class="text-link" href="/cards/">All custom cards</a>
+    </div>
+    <div class="product-grid">
+        {% for product in products %}
+            {% if product.category == "cards" %}
+                {% include "components/product-card.html" %}
+            {% endif %}
+        {% endfor %}
     </div>
 </section>
-                                
-                                
-    <!-- ============================================ -->
-    <!--            Extra Content To Rank             -->
-    <!-- ============================================ -->
 
-    <section id="sbs-r">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="560">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="560">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">SEO ranking</span>
-                <h2 class="cs-title">Talk about somethin to boost rankings here</h2>
-                <p class="cs-text">
-                    Sunseeker Rentals' presence extends throughout the Phoenix area, offering personalized property management solutions tailored to each neighborhood's unique needs. With a focus on efficiency and transparency, we strive to exceed expectations and provide property owners with peace of mind                 </p>
-                <a href="/blog" class="cs-button-solid">Scheduel a meeting</a>
-            </div>
+<section class="wrap section">
+    <div class="section-head">
+        <div>
+            <span class="eyebrow">Event signage</span>
+            <h2>Words big enough for a room.</h2>
         </div>
-    </section>
+        <a class="text-link" href="/signage/">All event signage</a>
+    </div>
+    <div class="product-grid">
+        {% for product in products %}
+            {% if product.category == "signage" %}
+                {% include "components/product-card.html" %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
 
+<section class="wrap section">
+    <div class="steps">
+        <div>
+            <span class="eyebrow">How an order starts</span>
+            <h2>Tell me the words. I letter the piece.</h2>
+            <p>No account and no cart. You send the occasion, and I tell you if I can make it.</p>
+        </div>
+        <ol>
+            <li>
+                <span>01</span>
+                <h3>The occasion</h3>
+                <p>A birthday, a thank-you stack, a welcome sign, or the whole paper suite for one day.</p>
+            </li>
+            <li>
+                <span>02</span>
+                <h3>The wording</h3>
+                <p>Names, a date, a sentence you actually say. Spelling the way you want it written.</p>
+            </li>
+            <li>
+                <span>03</span>
+                <h3>The piece</h3>
+                <p>Drawn and lettered for that order. Cards can be a single or a small set. Signs are sized for the room.</p>
+            </li>
+        </ol>
+    </div>
+</section>
 
-    {% include 'components/cta.html' %}
+<section class="wrap studio-note">
+    <div>
+        <span class="eyebrow">The studio</span>
+        <h2>Arizona lettering, since 2019.</h2>
+        <p class="lede">Hart It is handmade calligraphy and illustration: scalloped borders, gingham, stripes, ribbon-tied sleeves, and signs with a phrase short enough to read from the door. New work goes up on Instagram. Inquiries come in by DM.</p>
+        <div class="hero-actions">
+            <a class="btn btn-line" href="/about/">About the studio</a>
+            <a class="btn btn-solid" href="{{ client.instagram }}" target="_blank" rel="noopener">See @hart.itdesign</a>
+        </div>
+    </div>
+    <div class="note">
+        <h2>Find the cards in person, too.</h2>
+        <p>Sleeved greeting cards show up at local Arizona markets — thank-yous, birthdays, and the illustrated one-offs. Custom event signage is made to order. If you have a date, send it first.</p>
+    </div>
+</section>
 {% endblock %}

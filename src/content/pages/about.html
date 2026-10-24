@@ -1,76 +1,42 @@
 ---
 title: 'About'
-description: 'Meta description for the page'
-preloadImg: '/assets/images/cabinets2.jpg'
-permalink: 'about/'
-eleventyNavigation:
-    key: About Us
-    order: 200
+description: 'Hart It is an Arizona calligraphy and design studio, making custom cards and event signage by hand since 2019.'
+permalink: '/about/'
 ---
 
 {% extends "layouts/base.html" %}
 
-{% block head %}
-    <link rel="stylesheet" href="/assets/css/about.css">
-{% endblock %}
-
 {% block body %}
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
+<section class="wrap page-hero">
+    <span class="eyebrow">About</span>
+    <h1>A studio for cards and the signs beside them.</h1>
+    <p>Hart It is handmade calligraphy and design in Arizona, established in 2019. The work sits between a greeting card and a piece of lettering for a room: illustrated, a little playful, and written for a specific person or a specific day.</p>
+</section>
 
-    <section id="int-hero">
-        <h1 id="home-h">About Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
-
-    </section>
-
-    <!-- ============================================ -->
-    <!--                 Side By Side                 -->
-    <!-- ============================================ -->
-
-    <section id="sbs">
-        <div class="cs-container">
-            <!-- Left Image Section -->
-            <div class="cs-left">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="cabinets" loading="lazy" width="400" height="563">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/construction-m.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/construction.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/construction.jpg" alt="house" loading="lazy" width="400" height="563">
-                </picture>
-            </div>
-            <!-- Right Content Section-->
-            <div class="cs-right">
-                <span class="cs-topper">About Us</span>
-                <h2 class="cs-title">About Company Title</h2>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <p class="cs-text">
-                    In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.
-                </p>
-                <div class="cs-flex-group">
-                    <p class="cs-flex-p">
-                        In consequat tincidunt turpis sit amet imperdiet. Praesent Classei consequat tincidunt turpis sit amet imperdiet for mind.
-                    </p>
-                    <span class="cs-name">Justin Time</span>
-                    <span class="cs-job">CEO-Founder</span>
-                    <img class="cs-quote-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg" alt="gavel" width="136" height="77">
-                </div>
-                <a href="/projects" class="cs-button-solid">Our Projects</a>
-            </div>
+<section class="wrap about-grid">
+    <div class="prose">
+        <p><strong>Custom cards come first.</strong> Birthday pieces with scalloped florals. Thank-you stacks on striped paper, tied with a ribbon. Family notes for Mother’s Day, for dad, for no occasion at all. Holiday cards with candles and a short script. Illustrated one-offs that also show up sleeved at local markets.</p>
+        <p><strong>Event signage is the other half.</strong> A welcome phrase at the door. Names and a date lettered so the day looks considered. Menus, place cards, and table numbers drawn in the same hand. When the whole paper suite should match, that is one order, not four.</p>
+        <p>Some projects are neither a card nor a sign: a shop mark, a wordmark, a poster for one person. Those start the same way. Send the words you want kept.</p>
+        <p>New pieces are posted on <a href="{{ client.instagram }}">@hart.itdesign</a>. The fastest way to commission one is a DM with the occasion and the date.</p>
+    </div>
+    <div class="facts">
+        <div>
+            <span>Since</span>
+            <strong>2019</strong>
         </div>
-    </section>
-
-    {% include 'components/cta.html' %}
-
+        <div>
+            <span>Based</span>
+            <strong>Arizona</strong>
+        </div>
+        <div>
+            <span>Known for</span>
+            <strong>Cards &amp; signage</strong>
+        </div>
+        <div>
+            <span>Inquiries</span>
+            <strong>Instagram DM</strong>
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -1,0 +1,35 @@
+---
+title: 'Custom Cards'
+description: 'Handmade custom cards by Hart It: birthday, thank-you, family notes, holiday, and illustrated occasion cards.'
+permalink: '/cards/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+<section class="wrap page-hero">
+    <span class="eyebrow">Custom cards</span>
+    <h1>Cards <em>lettered for one person.</em></h1>
+    <p>This is the heart of the studio. Birthday florals, striped thank-yous tied in a ribbon, notes for mom and dad, holiday candles, and illustrated cards that start as a drawing. Each one is made for the person opening it.</p>
+</section>
+
+<section class="wrap section">
+    <div class="product-grid">
+        {% for product in products %}
+            {% if product.category == "cards" %}
+                {% include "components/product-card.html" %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+<section class="wrap studio-note">
+    <div class="prose">
+        <h2>What a card order looks like</h2>
+        <p>A single card is the usual place to start. Sets — a stack of thank-yous, a small holiday batch, place-card cousins — are welcome when you have a count. Market cards are the ready, sleeved pieces. Anything with a name or a private joke is made to order.</p>
+        <p>Pricing follows the piece. A greeting card from the market table is a small purchase. A custom set is quoted after the wording, the quantity, and the date are clear.</p>
+        <a class="btn btn-solid" href="/contact/">Inquire about a card</a>
+    </div>
+    <div class="frame">{% include "art/thanks.html" %}</div>
+</section>
+{% endblock %}

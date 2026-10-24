@@ -1,15 +1,17 @@
 {
-	"name": "Code Stitch Web Designs",
-	"email": "help@codestitch.app",
-	"phoneForTel": "555-779-4407",
-	"phoneFormatted": "(555) 779-4407",
+	"name": "Hart It",
+	"email": "",
+	"instagram": "https://www.instagram.com/hart.itdesign/",
+	"instagramDm": "https://ig.me/m/hart.itdesign/",
+	"phoneForTel": "",
+	"phoneFormatted": "",
 	"address": {
-		"lineOne": "First Address Line",
-		"lineTwo": "Second Address Line",
-		"city": "Denver",
-		"state": "CO",
-		"zip": "80206",
-		"mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
+		"lineOne": "Arizona",
+		"lineTwo": "",
+		"city": "Arizona",
+		"state": "",
+		"zip": "",
+		"mapLink": ""
 	},
-	"domain": "www.codestitch.app"
+	"domain": "hart.itdesign"
 }

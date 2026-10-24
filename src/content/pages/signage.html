@@ -1,0 +1,35 @@
+---
+title: 'Event Signage'
+description: 'Handmade event signage by Hart It: welcome signs, date signs, menus, place cards, and full lettering suites.'
+permalink: '/signage/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+<section class="wrap page-hero">
+    <span class="eyebrow">Event signage</span>
+    <h1>Signs for the day <em>people will remember.</em></h1>
+    <p>Welcome lettering, a date big enough to photograph, and the paper on the table: menus, place cards, and table numbers. Ordered together, they share one hand instead of looking gathered from five different shops.</p>
+</section>
+
+<section class="wrap section">
+    <div class="product-grid">
+        {% for product in products %}
+            {% if product.category == "signage" %}
+                {% include "components/product-card.html" %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+<section class="wrap studio-note">
+    <div class="prose">
+        <h2>Send the date before anything else</h2>
+        <p>Signage needs a runway. The first message should have the event date, the words you want written, and which pieces you actually need. A welcome sign alone is enough. A full suite is there when the menu and the place cards should match it.</p>
+        <p>Every sign is quoted. Size, wording, and how soon you need it change the work, so there is no shelf price.</p>
+        <a class="btn btn-solid" href="/contact/">Inquire about signage</a>
+    </div>
+    <div class="frame">{% include "art/welcome.html" %}</div>
+</section>
+{% endblock %}

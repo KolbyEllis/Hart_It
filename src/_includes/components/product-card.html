@@ -1,0 +1,11 @@
+<a class="product-card" href="/{{ product.category }}/{{ product.slug }}/">
+    <div class="frame">
+        {% include "art/" + product.art + ".html" %}
+    </div>
+    <div class="product-copy">
+        <span class="eyebrow">{{ product.categoryLabel }}</span>
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.summary }}</p>
+        <span class="text-link">View this piece</span>
+    </div>
+</a>

@@ -1,0 +1,191 @@
+[
+	{
+		"slug": "birthday-cards",
+		"title": "Birthday Cards",
+		"category": "cards",
+		"categoryLabel": "Custom Cards",
+		"art": "birthday",
+		"summary": "Scalloped florals, a big script hello, and a birthday card that looks nothing like the drugstore rack.",
+		"story": "Birthday cards are drawn around one person. Some are a floral border and a loose script greeting. Others turn the year into a little illustration — an object, a joke, a color they actually wear. The lettering is the point: their name, the age if you want it said out loud, and a line you would say if you handed it over yourself.",
+		"includes": [
+			"Hand-lettered greeting on the front",
+			"An original illustration, floral or playful",
+			"Room for a note inside",
+			"A clear sleeve when you want it gift-ready"
+		],
+		"madeFor": [
+			"Birthdays that deserve more than a printed verse",
+			"Milestone years",
+			"The friend who keeps every card"
+		],
+		"note": "Send the name, the date, and any line that has to be in there. A favorite color helps."
+	},
+	{
+		"slug": "thank-you-cards",
+		"title": "Thank-You Cards",
+		"category": "cards",
+		"categoryLabel": "Custom Cards",
+		"art": "thanks",
+		"summary": "Striped paper, brush script, and a ribbon-tied set for the notes you keep meaning to send.",
+		"story": "Thank-you cards are a studio staple: sage and cream stripes, a single script phrase, and a stack you can actually finish. Order one for a host, or a small set tied in a ribbon for the people who showed up — a shower, a dinner, a market neighbor, a whole guest list.",
+		"includes": [
+			"Brush-script thank-you on striped stock",
+			"Single cards or a matched set",
+			"Ribbon wrap for a set",
+			"Names added when the set is for one event"
+		],
+		"madeFor": [
+			"After a dinner, a shower, or a wedding weekend",
+			"Shop counters and market tables",
+			"Anyone who wants the pile of blank cards gone"
+		],
+		"note": "Tell me if this is one card or a set, and whether each card needs a name."
+	},
+	{
+		"slug": "family-notes",
+		"title": "Family Notes",
+		"category": "cards",
+		"categoryLabel": "Custom Cards",
+		"art": "family",
+		"summary": "Mother’s Day, a note for dad, and the postage-stamp florals saved for the people who raised you.",
+		"story": "Family notes are the cards with a specific person in mind. A gingham frame and a short sentence for dad. A floral stamp that just says mom. A Mother’s Day piece in periwinkle script on a striped ground. They are not a generic family category — each one is lettered for one relationship.",
+		"includes": [
+			"Lettering written for one person",
+			"Floral, gingham, or striped artwork",
+			"A short line on the front, space to write inside",
+			"Holiday and just-because versions"
+		],
+		"madeFor": [
+			"Mother’s Day and Father’s Day",
+			"Parents, grandparents, and the friend who is family",
+			"A note that does not need a holiday at all"
+		],
+		"note": "Tell me who it is for and the sentence you want them to read first."
+	},
+	{
+		"slug": "holiday-cards",
+		"title": "Holiday Cards",
+		"category": "cards",
+		"categoryLabel": "Custom Cards",
+		"art": "holiday",
+		"summary": "Candles, ribbon, and quiet script for the December card you send in your own handwriting’s cousin.",
+		"story": "Holiday pieces lean softer: taper candles with burgundy bows, a line of script around the margin, or a little tree and a short Christmas greeting. They can be one card for the mantel or a small batch with your family name worked into the lettering.",
+		"includes": [
+			"A seasonal illustration",
+			"Script greeting, with your names if you want them",
+			"One card or a small mailed batch",
+			"Colors pulled from your table, not a catalog red"
+		],
+		"madeFor": [
+			"Christmas and winter notes",
+			"Hostess cards for a holiday table",
+			"A mantel piece that is also a card"
+		],
+		"note": "Share the greeting, any names, and whether you need one or a batch."
+	},
+	{
+		"slug": "illustrated-cards",
+		"title": "Illustrated Occasion Cards",
+		"category": "cards",
+		"categoryLabel": "Custom Cards",
+		"art": "illustrated",
+		"summary": "Fruit, objects, and one-off drawings — the cards that start as a picture and end as a sentence.",
+		"story": "Some cards are more drawing than stationery. A gingham still life. A single object that means something to two people. A joke that only works if it is illustrated. These are the pieces that also show up sleeved at Arizona markets, and they can be made as a one-off with your own line on it.",
+		"includes": [
+			"An original illustrated front",
+			"Lettering that fits the drawing",
+			"A single custom card, or a small run of a design you love",
+			"Market-style sleeve on request"
+		],
+		"madeFor": [
+			"Inside jokes",
+			"A housewarming or a new apartment",
+			"Anyone who wants a drawing, not a verse"
+		],
+		"note": "Describe the object, the joke, or the moment. A rough photo is welcome."
+	},
+	{
+		"slug": "welcome-signs",
+		"title": "Welcome Signs",
+		"category": "signage",
+		"categoryLabel": "Event Signage",
+		"art": "welcome",
+		"summary": "The first thing guests read. A short phrase, a border with some nerve, and lettering that feels like the room.",
+		"story": "Welcome signs do one job: tell people they are in the right place. The lettering is large, the phrase is short, and the border does as much work as the words — tile, stripe, floral, or a flat color from the palette of the day. Weddings, showers, dinners, and shop doors all start here.",
+		"includes": [
+			"A hand-lettered welcome phrase",
+			"Names, a date, or a place name if you want them",
+			"A border drawn to match the rest of the day",
+			"Sizing talked through before anything is made"
+		],
+		"madeFor": [
+			"Wedding and shower entrances",
+			"Dinner parties and backyard gatherings",
+			"A studio, shop, or front door"
+		],
+		"note": "Send the exact words, where it will stand, and the date of the event."
+	},
+	{
+		"slug": "date-signs",
+		"title": "Date & Detail Signs",
+		"category": "signage",
+		"categoryLabel": "Event Signage",
+		"art": "date",
+		"summary": "Names and a date, lettered so the day looks like a poster instead of a template.",
+		"story": "A date sign is the piece people photograph. The numerals get room to breathe, the names sit in script, and the ground color belongs to the event — a wash of blush, a deep green, a paper cream. It can be the only sign of the day, or the one that sets the type style for everything else.",
+		"includes": [
+			"Names and the date, hand-lettered",
+			"A ground and a small illustration if you want one",
+			"Wording for a wedding, a party, or a milestone",
+			"A size chosen for where it will be seen"
+		],
+		"madeFor": [
+			"Weddings and engagement parties",
+			"Birthdays with a real date on them",
+			"Any day you want written down beautifully"
+		],
+		"note": "Send the names exactly as you want them spelled, and the date."
+	},
+	{
+		"slug": "day-of-paper",
+		"title": "Menus, Place Cards & Seating",
+		"category": "signage",
+		"categoryLabel": "Event Signage",
+		"art": "dayof",
+		"summary": "The paper on the table: a menu, a place card, a table number, all in the same hand.",
+		"story": "Day-of paper is where event signage gets specific. A menu with the courses in script and the dishes in a steady serif. Place cards with a single name large enough to read when you sit down. Table numbers that match the welcome sign instead of fighting it. Ordered together, they look like one set.",
+		"includes": [
+			"Menus, place cards, table numbers, or a mix",
+			"One lettering style across the set",
+			"Your wording, spelled the way you wrote it",
+			"Counts confirmed before the set is made"
+		],
+		"madeFor": [
+			"Seated dinners and receptions",
+			"Showers and rehearsal dinners",
+			"A long table that needs to feel finished"
+		],
+		"note": "Send the guest list or the menu as text, plus how many of each piece."
+	},
+	{
+		"slug": "event-suites",
+		"title": "Full Event Suites",
+		"category": "signage",
+		"categoryLabel": "Event Signage",
+		"art": "suite",
+		"summary": "Welcome, date, menu, and place cards drawn as one family instead of four separate orders.",
+		"story": "A suite is the whole lettering for one event, planned together. The welcome sign, the date, the menu, and the place cards share a hand, a palette, and a border. You are not collecting mismatched prints. You are walking into a day that was lettered on purpose. This is the piece to ask for when the signage has to feel like the cards on the table.",
+		"includes": [
+			"A shared palette and lettering style",
+			"Welcome sign and date sign",
+			"Day-of paper: menu, places, table numbers as needed",
+			"One round of wording changes before it is final"
+		],
+		"madeFor": [
+			"Weddings that want every paper piece to match",
+			"Showers and milestone parties",
+			"Hosts who do not want to art-direct five vendors"
+		],
+		"note": "Start with the date, the venue, and a list of which signs you actually need. We can leave pieces out."
+	}
+]

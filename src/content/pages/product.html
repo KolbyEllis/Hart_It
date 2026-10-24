@@ -1,0 +1,72 @@
+---
+pagination:
+    data: products
+    size: 1
+    alias: product
+permalink: "/{{ product.category }}/{{ product.slug }}/"
+eleventyComputed:
+    title: "{{ product.title }}"
+    description: "{{ product.summary }}"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+<article class="wrap product-layout">
+    <div class="frame">
+        {% include "art/" + product.art + ".html" %}
+    </div>
+    <div class="product-copy-block">
+        <a class="crumb" href="/{{ product.category }}/">{{ product.categoryLabel }}</a>
+        <h1>{{ product.title }}</h1>
+        <p class="lede">{{ product.story }}</p>
+        <div class="detail-list">
+            <div>
+                <h2>What you get</h2>
+                <ul>
+                    {% for item in product.includes %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h2>Good for</h2>
+                <ul>
+                    {% for item in product.madeFor %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <p class="callout">{{ product.note }}</p>
+        {% set piece = product.title %}
+        {% include "components/inquire-form.html" %}
+    </div>
+</article>
+
+<section class="wrap related">
+    <div class="section-head">
+        <div>
+            <span class="eyebrow">More {{ product.categoryLabel | lower }}</span>
+            <h2>Other pieces in this set.</h2>
+        </div>
+    </div>
+    <div class="product-grid">
+        {% for item in products %}
+            {% if item.category == product.category and item.slug != product.slug %}
+                <a class="product-card" href="/{{ item.category }}/{{ item.slug }}/">
+                    <div class="frame">
+                        {% include "art/" + item.art + ".html" %}
+                    </div>
+                    <div class="product-copy">
+                        <span class="eyebrow">{{ item.categoryLabel }}</span>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.summary }}</p>
+                        <span class="text-link">View this piece</span>
+                    </div>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
